@@ -94,7 +94,7 @@ export const publications: Publication[] = [
     venue:
       "Information Visualization, 2024.",
     links: [
-      { label: "DOI", href: "10.1177/14738716261434961" },
+      { label: "DOI", href: "https://doi.org/10.1177/14738716261434961" },
       { label: "PDF", href: "https://journals.sagepub.com/doi/pdf/10.1177/14738716261434961" }
     ],
     image: {

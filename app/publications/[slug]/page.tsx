@@ -40,10 +40,11 @@ export function generateStaticParams() {
   return publications.map((p) => ({ slug: p.slug }));
 }
 
-export default function Page(
-  { params }: { params: { slug: string } } 
+export default async function Page(
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const pub = publications.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const pub = publications.find((p) => p.slug === slug);
   if (!pub) return notFound();
 
   const hero = pub.detail?.hero ?? pub.image;
