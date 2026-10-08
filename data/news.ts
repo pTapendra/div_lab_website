@@ -8,7 +8,7 @@ export type NewsRecord = {
 export const newsData: NewsRecord[] = [
     {
     date: "08- 2026",
-    content: 'One poster - "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?" accepted at EduVIS Workshop,IEEE VIS 2026.',
+    content: 'One paper - "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?" accepted at EduVIS Workshop,IEEE VIS 2026.',
     link: "https://ieee-eduvis.github.io/",
   },
     {
