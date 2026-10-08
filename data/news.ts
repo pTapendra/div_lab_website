@@ -6,6 +6,21 @@ export type NewsRecord = {
 };
 
 export const newsData: NewsRecord[] = [
+    {
+    date: "08- 2026",
+    content: 'One poster - "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?" accepted at EduVIS Workshop,IEEE VIS 2026.',
+    link: "https://ieee-eduvis.github.io/",
+  },
+    {
+    date: "08- 2026",
+    content: 'One poster - "Quick-View Takeaways: How Does Title Framing Influence Pattern Identification in Line Charts?" accepted at IEEE VIS 2026.',
+    link: "https://arxiv.org/abs/2609.17485",
+  },
+    {
+    date: "08- 2026",
+    content: 'One paper - "How Does Title Framing Influence Pattern Identification in Line Charts?" accepted at VisxVision Workshop, IEEE VIS 2026.',
+    link: "https://arxiv.org/abs/2609.17455",
+  },
    {
     date: "06- 2026",
     content:
