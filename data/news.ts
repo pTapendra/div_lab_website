@@ -6,6 +6,11 @@ export type NewsRecord = {
 };
 
 export const newsData: NewsRecord[] = [
+  {
+    date: "10- 2026",
+    content: "Tapendra's talk abstract accepted for IEEE VIS / VisXVision Lightning Talk Session, IEEE VIS 2026.",
+    link: "https://visxvision.com/vis-2026/",
+  },
     {
     date: "08- 2026",
     content: 'One paper - "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?" accepted at EduVIS Workshop,IEEE VIS 2026.',
