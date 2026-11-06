@@ -31,7 +31,103 @@ export type Publication = {
 
 export const publications: Publication[] = [
   //2026
-      {
+
+  {
+    slug: "vlat-hlc-eduvis-2026",
+    year: 2026,
+    title:
+      "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?",
+    authors: [
+      { name: "Aaryani Chowdary Ambati" },
+      { name: "Tapendra Pandey" },
+      { name: "Arran Zeyu Wang" },
+      { name: "Ghulam Jilani Quadri", highlight: true },
+    ],
+    venue:
+      "In Proceedings of the IEEE Workshop on Education in Visualization (EduVis 2026).",
+    image: {
+      src: "/publications/eduvis-2026.png",
+      alt: "EduVis 2026 paper thumbnail",
+    },
+    links: [],
+    detail: {
+      abstract: `Visualization literacy assessment tests such as VLAT and Mini-VLAT measure people’s ability to perform isolated, low-level visual analytics tasks, such as estimating statistical quantities. However, it remains unclear whether these assessments also account for the overall understanding viewers intuitively gain about the data without explicit cuing or guidance, often referred to as high-level comprehension. In this work, we examine whether Mini-VLAT scores predict high-level comprehension, characterized as alignment between viewers’ uncued interpretations and designer intent. We conducted a study with 80 participants, in which each participant completed the Mini-VLAT test and interpreted 16 charts selected from a set of 40 real-world visualizations. Our qualitative and quantitative analyses show no significant relationship between participants’ Mini-VLAT scores and high-level comprehension. Our findings suggest while visualization literacy tests like Mini-VLAT capture viewers’ ability to perform directed, low-level tasks, they do not assess high-level comprehension in natural, uncued settings. Future work should develop VLAT that accounts for high-level comprehension beyond estimating prespecified statistical quantities.`,
+    },
+  },
+
+  {
+    slug: "title-framing-line-charts",
+    year: 2026,
+    title:
+      "How Does Title Framing Influence Pattern Identification in Line Charts?",
+    authors: [
+      { name: "Jasmine Lim" },
+      { name: "Tapendra Pandey", highlight: true },
+      { name: "Arran Zeyu Wang" },
+      { name: "Sungahn Ko" },
+      { name: "Ghulam Jilani Quadri", highlight: true },
+    ],
+    venue: "In Proceedings of the VisxVision Workshop at IEEE VIS 2026.",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2609.17455" },
+      { label: "PDF", href: "https://arxiv.org/pdf/2609.17455" },
+    ],
+    image: {
+      src: "/publications/How does title.png",
+      alt: "How Does Title Framing Influence Pattern Identification in Line Charts?",
+    },
+    detail: {
+      pdf: "https://arxiv.org/pdf/2609.17455",
+      abstract: `Visual data communication in digital media is increasingly characterized by short attention spans and snapshot-based viewing, often employing line charts to convey trends and patterns. Among all visual elements, titles are crucial elements that can shape how viewers interpret visual information and form chart takeaways. In this study, we examine how title characteristics, particularly title word count and intended message, influence people's pattern identification in single-class line charts. Participants viewed 50 line charts collected from online news media and identified the pattern they perceived. Our results demonstrate that both title word count and intended message significantly influence viewers' pattern identification. Our findings highlight the importance of title framing in shaping quick-view pattern takeaways and supporting effective visualization communication.`,
+      bibtex: `@misc{lim2026titleframing,
+  title={How Does Title Framing Influence Pattern Identification in Line Charts?},
+  author={Jasmine Lim and Tapendra Pandey and Arran Zeyu Wang and Sungahn Ko and Ghulam Jilani Quadri},
+  year={2026},
+  eprint={2609.17455},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2609.17455}
+}`,
+    },
+  },
+  {
+    slug: "guidelines-are-not-rules",
+    year: 2026,
+    title:
+      "Guidelines Are Not Rules: Characterizing Terminologies around Visualization Design Guidelines",
+    authors: [
+      { name: "Anna L Chinni" },
+      { name: "Md Dilshadur Rahman" },
+      { name: "Bon Adriel Aseniero" },
+      { name: "Petra Isenberg" },
+      { name: "Kushin Mukherjee" },
+      { name: "Ghulam Jilani Quadri", highlight: true },
+      { name: "Paul Rosen" },
+      { name: "Karen B Schloss" },
+      { name: "Daniel Weiskopf" },
+    ],
+    venue: "In Proceedings of the BELIV Workshop at IEEE VIS 2026.",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2608.27842" },
+      { label: "PDF", href: "https://arxiv.org/pdf/2608.27842" },
+    ],
+    image: {
+      src: "/publications/Guidelines.png",
+      alt: "Guidelines Are Not Rules",
+    },
+    detail: {
+      pdf: "https://arxiv.org/pdf/2608.27842",
+      abstract: `A common expectation in visualization research is that outcomes recommend how researchers and practitioners take action or make design decisions. We often express these as "guidelines." Yet, the term "guideline" is both ambiguous and loosely defined, and what one researcher considers a guideline may be too broad, too loose, or too strict for another. We take a closer look at a broader set of terms that can express desirable results around visualization research, and untangle how these words are understood in the community in relation to other similar terms. We base our work on an exploratory study with experts, followed by a crowdsourcing study with a separate mapping phase (n=30) and rating phase (n=42) targeting input from the broader visualization community, and an analysis of the use of terminology in 3,877 IEEE VIS papers published from 1990 to 2024. Based on our findings, we call for more nuanced, precise discussions of research outcomes and their communication to the broader community, including practitioners and students.`,
+      bibtex: `@misc{chinni2026guidelines,
+  title={Guidelines Are Not Rules: Characterizing Terminologies around Visualization Design Guidelines},
+  author={Anna L Chinni and Md Dilshadur Rahman and Bon Adriel Aseniero and Petra Isenberg and Kushin Mukherjee and Ghulam Jilani Quadri and Paul Rosen and Karen B Schloss and Daniel Weiskopf},
+  year={2026},
+  eprint={2608.27842},
+  archivePrefix={arXiv},
+  url={https://arxiv.org/abs/2608.27842}
+}`,
+    },
+  },
+  {
     slug: "hlc-llm",
     year: 2026,
     title:
@@ -46,12 +142,12 @@ export const publications: Publication[] = [
       { name: "Daeun Jeong" },
       { name: "Sungahn Ko" },
       { name: "Ghulam Jilani Quadri", highlight: true },
-      
+
     ],
     venue:
       "In Proceedings of EuroVis 2026: Eurographics Conference on Visualization.",
     links: [{ label: "DOI", href: "https://doi.org/10.1111/cgf.70450" },
-      { label: "PDF", href: "https://arxiv.org/pdf/2604.08959" }],
+    { label: "PDF", href: "https://arxiv.org/pdf/2604.08959" }],
     image: {
       src: "/publications/hlcllm.png",
       alt: "HLCLLM Image",
@@ -77,7 +173,7 @@ export const publications: Publication[] = [
 }`,
     },
   },
-       {
+  {
     slug: "human-mllm",
     year: 2026,
     title:
@@ -86,10 +182,10 @@ export const publications: Publication[] = [
       { name: "Seokweon Jung" },
       { name: "Jeongmin Rhee" },
       { name: "Seoyoung Doh" },
-      { name: "Hyeon Jeon"},
+      { name: "Hyeon Jeon" },
       { name: "Ghulam Jilani Quadri", highlight: true },
       { name: "Jinwook Seo" },
-      
+
     ],
     venue:
       "Information Visualization, 2024.",
@@ -134,7 +230,8 @@ doi = {10.1177/14738716261434961},
 url = {https://journals.sagepub.com/doi/pdf/10.1177/14738716261434961},
 }
 
-}`,    },
+}`,
+    },
   },
   {
     slug: "annotation-educator",
@@ -145,12 +242,12 @@ url = {https://journals.sagepub.com/doi/pdf/10.1177/14738716261434961},
       { name: "MD Rahman" },
       { name: "Devin Lange" },
       { name: "Ghulam Jilani Quadri", highlight: true },
-      { name: "Paul Rosen" }, 
+      { name: "Paul Rosen" },
     ],
     venue:
       "In Proceedings of EuroVis 2026: Eurographics Conference on Visualization.",
-    links: [ { label: "DOI", href: "https://doi.org/10.1111/cgf.70435" },
-      { label: "PDF", href: "https://arxiv.org/pdf/2604.07691" }],
+    links: [{ label: "DOI", href: "https://doi.org/10.1111/cgf.70435" },
+    { label: "PDF", href: "https://arxiv.org/pdf/2604.07691" }],
     image: {
       src: "/publications/annotation-educator.png",
       alt: "Annotation Educator Image",
@@ -177,7 +274,7 @@ url = {https://journals.sagepub.com/doi/pdf/10.1177/14738716261434961},
 }`,
     },
   },
-    {
+  {
     slug: "redundant-is-not-redundant",
     year: 2026,
     title:
@@ -398,7 +495,7 @@ practitioners choosing visualization strategies for dense temporal data.`,
     },
   },
   // 2025
-    {
+  {
     slug: "visual-edugame",
     year: 2025,
     title:
