@@ -1,67 +1,69 @@
 "use client";
 
-import newsData from "@/data/news";
-function parseMonthYear(mmyyyy: string): Date {
-  const [mmRaw, yyyyRaw] = mmyyyy.split("-").map((s) => s.trim());
-  const mm = parseInt(mmRaw, 10) - 1 || 0;
-  const yyyy = parseInt(yyyyRaw, 10) || 1970;
-  return new Date(yyyy, mm, 1);
+import React from "react";
+import newsData, { NewsLink } from "@/data/news";
+
+function parseMonthYear(value: string): Date {
+  const [mmRaw, yyyyRaw] = value.split(".").map((s) => s.trim());
+
+  const month = Math.max((parseInt(mmRaw, 10) || 1) - 1, 0);
+  const year = parseInt(yyyyRaw, 10) || 1970;
+
+  return new Date(year, month, 1);
 }
 
-function buildContentHTML(
-  content: string,
-  paperLink?: string,
-  confLink?: string
-) {
-  let html = content;
-
-  const titleMatch = content.match(/"([^"]+)"/);
-  if (titleMatch && paperLink) {
-    const title = titleMatch[1];
-    html = html.replace(
-      `"${title}"`,
-      `<span class="paper-title" data-link="${paperLink}">"${title}"</span>`
-    );
+function renderContent(content: string, links?: NewsLink[]) {
+  if (!links?.length) {
+    return content;
   }
 
-  const confCandidates = [
-    "IEEE VIS 2025",
-    "IEEE VIS 2024",
-    "EuroVis 2024",
-    "ACM CHI 2024",
-    "ACM ASSETS 2024",
-    "Dagstuhl",
-    "BELIV",
-    "IEEE TVCG",
-  ];
+  let parts: React.ReactNode[] = [content];
 
-  if (confLink) {
-    for (const conf of confCandidates) {
-      if (html.includes(conf)) {
-        html = html.replace(
-          conf,
-          `<span class="conference-name" data-link="${confLink}">${conf}</span>`
-        );
-        break;
+  links.forEach((link) => {
+    parts = parts.flatMap((part, index) => {
+      if (typeof part !== "string") {
+        return [part];
       }
-    }
-  }
 
-  return html;
+      const split = part.split(link.label);
+
+      if (split.length === 1) {
+        return [part];
+      }
+
+      const result: React.ReactNode[] = [];
+
+      split.forEach((text, splitIndex) => {
+        if (text) {
+          result.push(text);
+        }
+
+        if (splitIndex < split.length - 1) {
+          result.push(
+            <a
+              key={`${link.href}-${index}-${splitIndex}`}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#00677f] hover:underline"
+            >
+              {link.label}
+            </a>
+          );
+        }
+      });
+
+      return result;
+    });
+  });
+
+  return parts;
 }
 
 export default function News() {
-  const latest = [...newsData]
-    .sort((a, b) => +parseMonthYear(b.date) - +parseMonthYear(a.date))
-    .slice(0, 10);
-
-  const handleClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    const target = e.target as HTMLElement;
-    if (target.matches(".paper-title, .conference-name")) {
-      const url = target.getAttribute("data-link");
-      if (url) window.open(url, "_blank", "noopener,noreferrer");
-    }
-  };
+  const sortedNews = [...newsData].sort(
+    (a, b) => +parseMonthYear(b.date) - +parseMonthYear(a.date)
+  );
 
   return (
     <section className="mt-6 rounded border border-neutral-200 bg-neutral-100 p-4 text-sm">
@@ -69,28 +71,23 @@ export default function News() {
         News and Updates
       </h2>
 
-      <div
-        className="grid grid-cols-[max-content_1fr] items-baseline gap-x-4 gap-y-2"
-        onClick={handleClick}
-      >
-        {latest.map((n, i) => {
-          const contentHTML = buildContentHTML(
-            n.content,
-            n.link,
-            n.conferenceLink
-          );
-          return (
-            <div className="contents" key={`${n.date}-${i}`}>
-              <div className="text-left text-[0.8rem] text-neutral-900">
-                {n.date}
+      <div className="max-h-52 overflow-y-auto pr-2">
+        <div className="grid grid-cols-[72px_minmax(0,1fr)] gap-x-3 gap-y-2">
+          {sortedNews.map((news, index) => (
+            <React.Fragment key={`${news.date}-${index}`}>
+              <div className="whitespace-nowrap text-[0.8rem] font-medium text-neutral-900">
+                {news.date}
               </div>
+
               <div
-                className="-ml-2 pl-1 text-[0.8rem] text-neutral-600"
-                dangerouslySetInnerHTML={{ __html: contentHTML }}
-              />
-            </div>
-          );
-        })}
+                className="truncate text-[0.8rem] text-neutral-600"
+                title={news.content}
+              >
+                {renderContent(news.content, news.links)}
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
       </div>
     </section>
   );

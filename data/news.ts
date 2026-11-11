@@ -1,152 +1,228 @@
+
+export type NewsLink = {
+  label: string;
+  href: string;
+};
+
 export type NewsRecord = {
   date: string;
   content: string;
-  link?: string;
-  conferenceLink?: string;
+  links?: NewsLink[];
 };
 
 export const newsData: NewsRecord[] = [
   {
-    date: "10- 2026",
-    content: "Tapendra's talk abstract accepted for IEEE VIS / VisXVision Lightning Talk Session, IEEE VIS 2026.",
-    link: "https://visxvision.com/vis-2026/",
+    date: "11.2026",
+    content:
+      "DIV-Lab member- Aaryani, Ghulam, and Tapendra travelling to Boston for IEEE VIS 2026. See you there !",
   },
-    {
-    date: "08- 2026",
-    content: 'One paper - "Do Visualization Literacy Assessment Tests Account for High-Level Visualization Comprehension?" accepted at EduVIS Workshop,IEEE VIS 2026.',
-    link: "https://ieee-eduvis.github.io/",
+  {
+    date: "10.2026",
+    content:
+      "Abstract accepted for VisXVision workshop Lightning Talk at IEEE VIS 2026.",
+    links: [
+      {
+        label: "VisXVision",
+        href: "https://visxvision.com/vis-2026/",
+      },
+    ],
   },
-    {
-    date: "08- 2026",
-    content: 'One poster - "Quick-View Takeaways: How Does Title Framing Influence Pattern Identification in Line Charts?" accepted at IEEE VIS 2026.',
-    link: "https://arxiv.org/abs/2609.17485",
+  {
+    date: "08.2026",
+    content:
+      "Workshop papers and Poster IEEE VIS 2026: VLAT-HLC paper at EduVIS, Title Framing paper at VisXVision, and Quick-View Takeaways poster.",
+    links: [
+      {
+        label: "EduVIS",
+        href: "https://ieee-eduvis.github.io/",
+      },
+      {
+        label: "Title Framing",
+        href: "https://arxiv.org/abs/2609.17455",
+      },
+      {
+        label: "Quick-View Takeaways",
+        href: "https://arxiv.org/abs/2609.17485",
+      },
+    ],
   },
-    {
-    date: "08- 2026",
-    content: 'One paper - "How Does Title Framing Influence Pattern Identification in Line Charts?" accepted at VisxVision Workshop, IEEE VIS 2026.',
-    link: "https://arxiv.org/abs/2609.17455",
-  },
-   {
-    date: "06- 2026",
+  {
+    date: "06.2026",
     content:
       "Debra successfully defended her Ph.D. Congratulations to Dr. Debra Hogue!",
   },
   {
-    date: "05- 2026",
+    date: "05.2026",
     content:
-      "Tapendra's abstracts were accepted for presentation at the VisxVision workshop and as a conference poster at the Vision Sciences Society Annual Meeting.",
+      "Abstract accepted at VisXVision satellite event at VSS 2026",
   },
   {
-    date: "05- 2026",
-    content: "Aaryani Chowdary Ambati, PhD Student, is joining DIV-Lab from Summer 2026.",
+    date: "05.2026",
+    content:
+      "Aaryani Chowdary Ambati joins DIV-Lab as a PhD student.",
   },
   {
-    date: "04 - 2026",
+    date: "04.2026",
     content:
-      'Our lab student - Jasmine Lim awarded a "Summer UReCA Fellowship"',
-    link: "https://www.ou.edu/ureca/opportunities/ureca-summer-fellowship",
+      "Jasmine Lim received a Summer UReCA Fellowship. A paper accepted at EuroVis 2026.",
+    links: [
+      {
+        label: "Summer UReCA Fellowship",
+        href: "https://www.ou.edu/ureca/opportunities/ureca-summer-fellowship",
+      },
+      {
+        label: "EuroVis 2026",
+        href: "https://arxiv.org/abs/2604.08959",
+      },
+    ],
   },
   {
-    date: "04 - 2026",
+    date: "04.2026",
     content:
-      'One paper - "How Do LLMs See Charts? A Comparative Study on High-Level Visualization Comprehension in Humans and LLMs" accepted at EuroVis 2026',
-    link: "https://arxiv.org/abs/2604.08959",
-  },
-    {
-    date: "04 - 2026",
-    content:
-      'Our paper - "Redundant is Not Redundant: Automating Efficient Categorical Palette Design Unifying Color & Shape Encodings with CatPAW" awarded "Best Paper Honorable Mention at ACM CHI 2026" ',
-    link: "https://arxiv.org/abs/2602.06792",
-  },
-  {
-    date: "10 - 2025",
-    content:
-      'Our paper - "Characterizing Visualization Perception with Psychological Phenomena: Uncovering the Role of Subitizing in Data Visualization" awarded "Best Paper Honorable Mention at IEEE VIS 2025" ',
-    link: "https://ieeevis.org/year/2025/info/awards/best-paper-awards",
+      "CatPAW received an ACM CHI 2026 Honorable Mention.",
+    links: [
+      {
+        label: "ACM CHI 2026 Honorable Mention",
+        href: "https://arxiv.org/abs/2602.06792",
+      },
+    ],
   },
   {
-    date: "10 - 2025",
+    date: "10.2025",
     content:
-      'One paper - "Visual Stenography: Feature Recreation and Preservation in Sketches of Noisy Line Charts" accepted at IEEE TVCG 2025',
-    link: "https://arxiv.org/abs/2510.11927",
+      "Subitizing paper received an IEEE VIS 2025 Honorable Mention;",
+    links: [
+      {
+        label: "IEEE VIS 2025 Honorable Mention",
+        href: "https://ieeevis.org/year/2025/info/awards/best-paper-awards",
+      },
+    ],
   },
   {
-    date: "09 - 2025",
+    date: "10.2025",
     content:
-      'One Paper - "Distortion-aware Brushing for Reliable Cluster Analysis in Multidimensional Projections" accepted at IEEE TVCG 2025.',
-    link: "https://arxiv.org/abs/2201.06379",
+      "Visual Stenography paper accepted at IEEE TVCG 2025.",
+    links: [
+      {
+        label: "Visual Stenography",
+        href: "https://arxiv.org/abs/2510.11927",
+      },
+    ],
   },
   {
-    date: "09 - 2025",
+    date: "09.2025",
     content:
-      'One Paper - "Evaluating Line Chart Strategies for Mitigating Density of Temporal Data: The Impact on Trend, Prediction and Decision-Making" accepted at 20th International Symposium on Visual Computing 2025.',
-    link: "https://arxiv.org/abs/2510.11912",
+      "Distortion-aware Brushing accepted at IEEE TVCG;",
+    links: [
+      {
+        label: "Distortion-aware Brushing",
+        href: "https://arxiv.org/abs/2201.06379",
+      },
+    ],
   },
   {
-    date: "07 - 2025",
+    date: "09.2025",
     content:
-      'One Paper - "Characterizing Visualization Perception with Psychological Phenomena: Uncovering the Role of Subitizing in Data Visualization" accepted at IEEE VIS 2025.',
-    link: "https://arxiv.org/pdf/2410.05579",
+      "Evaluating Line Chart Strategies accepted at ISVC 2025.",
+    links: [
+      {
+        label: "Evaluating Line Chart Strategies",
+        href: "https://arxiv.org/abs/2510.11912",
+      },
+    ],
   },
   {
-    date: "07 - 2025",
+    date: "07.2025",
     content:
-      'One Paper - "A survey on annotations in information visualization: Empirical insights, applications, and challenges" accepted at IEEE TVCG 2025.',
-    link: "https://arxiv.org/pdf/2410.05579",
+      "Subitizing was accepted at IEEE VIS 2025. Annotations survey work accepted at IEEE TVCG 2025.",
+    links: [
+      {
+        label: "Subitizing",
+        href: "https://arxiv.org/pdf/2410.05579",
+      },
+      {
+        label: "Annotations Survey",
+        href: "https://arxiv.org/pdf/2410.05579",
+      },
+    ],
   },
   {
-    date: "06 - 2025",
+    date: "06.2025",
     content:
-      'Organizing Dagstuhl Seminar on "Navigating the Maze of Guidelines to Unify Visualization Design Recommendations"',
-    link: "https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/25232",
+      'Co-Organized the Dagstuhl Seminar "Navigating the Maze of Guidelines to Unify Visualization Design Recommendations."',
+    links: [
+      {
+        label: "Dagstuhl Seminar",
+        href: "https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/25232",
+      },
+    ],
   },
   {
-    date: "09 - 2024",
+    date: "04.2025",
     content:
-      'One Paper - "(Yet Another) Evaluation Needed? A Panel Discussion on Evaluation Trends in Visualization" accepted at IEEE VIS 2024',
-    link: "https://vis-panel-enough-evaluation.github.io/",
+      "High-Level Visualization Comprehension and Categorical Color Perception papers accepted at ACM CHI and EuroVis.",
+    links: [
+      {
+        label: "High-Level Visualization Comprehension",
+        href: "https://doi.org/10.1145/3613904.3642813",
+      },
+      {
+        label: "Categorical Color Perception",
+        href: "https://arxiv.org/pdf/2404.03787",
+      },
+    ],
   },
   {
-    date: "09 - 2024",
+    date: "09.2024",
     content:
-      'BELIV workshop paper - "Striking the Right Balance: Systematic Assessment of Evaluation Method Distribution Across Contribution Types" accepted at IEEE VIS 2024',
-    link: "https://arxiv.org/pdf/2408.16080",
+      "IEEE VIS 2024- A Panel Discussion proposal accepted. A paper accepted at BELIV workshop",
+    links: [
+      {
+        label: "IEEE VIS Panel",
+        href: "https://vis-panel-enough-evaluation.github.io/",
+      },
+      {
+        label: "BELIV Workshop",
+        href: "https://arxiv.org/pdf/2408.16080",
+      },
+    ],
   },
   {
-    date: "08 - 2024",
+    date: "08.2024",
     content:
-      'Full Paper - "A Qualitative Analysis of Common Practices in Annotations: A Taxonomy and Design Space" accepted at IEEE VIS 2024',
-    link: "https://arxiv.org/pdf/2306.06043",
+      "Annotation Design Space and Shape It Up papers accepted at IEEE VIS 2024.",
+    links: [
+      {
+        label: "Annotation Design Space",
+        href: "https://arxiv.org/pdf/2306.06043",
+      },
+      {
+        label: "Shape It Up",
+        href: "https://arxiv.org/pdf/2408.16079",
+      },
+    ],
   },
   {
-    date: "08 - 2024",
+    date: "07.2024",
     content:
-      'Full Paper - "Shape It Up: An Empirically Grounded Approach for Designing Shape Palettes" accepted at IEEE VIS 2024',
-    link: "https://arxiv.org/pdf/2408.16079",
+      "Paper was accepted at ACM ASSETS 2024.",
+    links: [
+      {
+        label: "Our Stories, Our Data",
+        href: "https://www.arxiv.org/pdf/2408.16072",
+      },
+    ],
   },
   {
-    date: "07 - 2024",
+    date: "05.2024",
     content:
-      'One full paper - "Our Stories, Our Data: Co-designing Visualizations with People with Intellectual and Developmental Disabilities" accepted at ACM ASSETS 2024',
-    link: "https://www.arxiv.org/pdf/2408.16072",
-  },
-  {
-    date: "05 - 2024",
-    content:
-      'EuroVis short paper "Revisiting Categorical Color Perception in Scatterplots: Sequential, Diverging, and Categorical Palettes" received Best Short Paper Award at 2024 EG/VGTC Conference on Visualization - EuroVis 2024',
-    link: "https://event.sdu.dk/eurovis/awards",
-  },
-  {
-    date: "04 - 2025",
-    content:
-      'One Paper - "Do You See What I See? A Qualitative Study Eliciting High-Level Visualization Comprehension" accepted at ACM CHI 2024.',
-    link: "https://doi.org/10.1145/3613904.3642813",
-  },
-  {
-    date: "04 - 2025",
-    content:
-      'One Paper - "Revisiting Categorical Color Perception in Scatterplots: Sequential, Diverging, and Categorical Palettes" accepted at IEEE EuroVis 2024.',
-    link: "https://arxiv.org/pdf/2404.03787",
+      "Categorical Color Perception work received the Best Short Paper Award at EuroVis 2024.",
+    links: [
+      {
+        label: "EuroVis 2024 Best Short Paper",
+        href: "https://event.sdu.dk/eurovis/awards",
+      },
+    ],
   },
 ];
 

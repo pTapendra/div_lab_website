@@ -45,3 +45,56 @@ body {
     animation: marquee-slow 60s linear infinite;
   }
 }
+
+@layer components {
+  .admin-input {
+    @apply min-h-10 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none transition placeholder:text-neutral-400 focus:border-[#841617] focus:ring-2 focus:ring-[#841617]/10;
+  }
+
+  .reference-primary-button {
+    @apply inline-flex min-h-9 items-center gap-1.5 rounded-md bg-[#841617] px-3.5 py-2 text-sm font-medium text-white transition hover:bg-[#6f1112] focus:outline-none focus:ring-2 focus:ring-[#841617]/20 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .reference-secondary-button {
+    @apply inline-flex min-h-9 items-center gap-1.5 rounded-md border border-neutral-300 bg-white px-3.5 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .reference-row-action {
+    @apply inline-flex h-6 min-w-6 items-center justify-center gap-0.5 rounded border border-neutral-300 bg-white px-1.5 text-[11px] text-neutral-600 transition hover:border-neutral-400 hover:bg-neutral-100 hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-200 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .reference-row-action-danger {
+    @apply text-red-600 hover:border-red-200 hover:bg-red-50 hover:text-red-700;
+  }
+
+  .reference-modal-overlay {
+    @apply fixed inset-0 z-[100] flex items-end justify-center bg-black/45 p-0 sm:items-center sm:p-5;
+  }
+
+  .reference-modal-panel {
+    @apply flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-t-lg border border-neutral-200 bg-white shadow-xl sm:max-w-md sm:rounded-lg;
+  }
+
+  .reference-modal-panel-wide {
+    @apply sm:max-w-3xl;
+  }
+
+  .reference-modal-header {
+    @apply flex shrink-0 items-center justify-between gap-4 border-b border-neutral-200 px-5 py-4 sm:px-6;
+  }
+
+  .reference-modal-body {
+    @apply overflow-y-auto px-5 py-5 sm:px-6;
+    overscroll-behavior: contain;
+  }
+
+  .reference-modal-close {
+    @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded text-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-200 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
+
+@media (max-width: 639px) {
+  .reference-modal-panel {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
